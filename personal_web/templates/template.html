@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+Template is here: https://bootswatch.com/cerulean/#navbar
+FontAwesome: http://fontawesome.io/icons/
+-->
+<html>
+<head>
+    {% block refresh %}
+    {% endblock refresh %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" lang="en" content="JoeMullen">
+    <meta name="author" content="Joseph Mullen">
+    <meta name="robots" content="index, follow">
+    <!-- favicon -->
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAB8fHwSAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Fz/A+Bc/wPgXP8D4Fz/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAImJidgAAAAAAAAAAAPgXP8D4Fz/A+Bc/wPgXP8D4Fz/A+Bc/wPgXP8D4Fz/AAAAAAAAAAAAAAAAAAAAAAAAAACJiYn/iYmJ/wPgXP8D4Fz/A+Bc/wExFCMAAAAAAAAAAALuM0ED4Fz/A+Bc/wPgXP8AAAAAAAAAAAAAAAAAAAAAAAAAAImJif+JiYn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Fz/A+Bc/wAAAAAAAAAAAAAAAAPgXP8D4Fz/iYmJ/4mJif8AAAAAAAAAADc3NzE2NjYKAAAAAAAAAAAAAAAAAAAAAAPgXP8D4Fz/AAAAAAAAAAAD4Fz/A+Bc/wAAAACJiYn/iYmJ/4mJif+JiYn/iYmJ/4mJif8AAAAAAAAAAAAAAAAD4Fz/A+Bc/wAAAAAD4Fz/A+Bc/wAAAAAAAAAAREREEomJif+JiYn/iYmJ/4mJif+JiYn/iYmJ/wAAAAAAAAAAAAAAAAPgXP8D4Fz/A+Bc/wPgXP8AAAAAAAAAAImJif+JiYn/iYmJ/4mJif+JiYn/iYmJ/4mJif8AAAAAAAAAAAAAAAAD4Fz/A+Bc/wPgXP8D4Fz/AAAAAAAAAACJiYn/iYmJ/4mJif+JiYn/iYmJ/4mJif+JiYn/AAAAAAAAAAAAAAAAA+Bc/wPgXP8D4Fz/A+Bc/wAAAAAAAAAAAAAAAImJif+JiYn/iYmJ/4mJif+JiYn/iYmJ/wAAAAAAAAAAAAAAAAPgXP8D4Fz/AAAAAAPgXP8D4Fz/AAAAAAAAAACJiYn/j4+P/4mJif+JiYn/iYmJ/4mJibEAAAAAAAAAAAAAAAAD4Fz/AAAAAAAAAAAD4Fz/A+Bc/wAAAAAAAAAAAAAAAAAAAACJiYn/iYmJ/wAAAAAAAAAAAAAAAAAAAAAAAAAAA+Bc/wAAAAAAAAAAAAAAAAPgXP8D4Fz/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+Bc/wPgXP8D4Fz/A+FctQAAAAAAAAAAA+Bc0wPgXP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Fz/A+Bc/wPgXP8D4Fz/A+Bc/wPgXP8D4Fz/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4Fz/A+Bc/wPgXP8D4Fz/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8AALAPAACDxwAAz/MAAIf5AACQOQAAOBwAADAcAAAwHAAAOBwAAJgdAACefQAAz/8AAOGfAADwHwAA/D8AAA=="
+          rel="icon" type="image/x-icon"/>
+    <!-- icons -->
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <!-- Override CSS file - add your own CSS rules -->
+    <link rel="stylesheet" href="/static/css/lib/drenin_styles.css">
+
+    <script type="text/javascript">
+        function transferField(someval) {
+            document.queryform.sparql.value = someval;
+        }
+    </script>
+
+    <!-- Highlight active page on tab -->
+    <script>
+        $(document).ready(function () {
+            $("#{{request.endpoint}}").addClass("active");
+        })
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="nav-bar">
+    <div class="container">
+        <ul class="nav">
+            <li id="home" role="presentation" class=""><a href="{{ url_for('index') }}" title="Home">Home</a></li>
+            </li>
+            <li id="datasets" role="presentation" class=""><a href="{{ url_for('datasets') }}" title="Datasets">Datasets</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="main">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<script>
+    var messages = {
+    {
+        messages | safe
+    }
+    }
+    ;
+    for (var i = 0; i < messages.length; i++) {
+        alert(messages[i]);
+    }
+</script>
+{% endif %}
+{% endwith %}
+
+<div class="footer">
+    <div class="container">
+        <a href="mailto:joseph.m.p.mullen@gmail.com">Contact</a> me<br>
+        Copyright 2017 &copy; Joseph Mullen
+    </div>
+</div>
+</body>
+</html>

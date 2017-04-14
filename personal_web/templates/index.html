@@ -1,0 +1,49 @@
+{% extends "template.html" %}
+{% block body%}
+<h1>DReNIn</h1>
+<i>An RDF dataset developed for drug repositioning...</i>
+<hr>
+<!-- Blockquotes -->
+<p>Despite a recent resurgence in productivity, Research and Development (R&amp;D) approaches to drug discovery are
+    proving to be less fruitful despite the increased spending<b><sup>1</sup></b>. Complementary approaches, such as
+    drug repositioning offer interesting alternatives. Drug repositioning, or drug repurposing involves the
+    identification of novel uses for existing drugs<b><sup>2</sup></b>.</p>
+<p>In order to make more informed drug repositioning inferences, we present <b>DReNIn</b> (<b>D</b>rug <b>Re</b>positioning
+    <b>N</b>etwork <b>In</b>tegration). DReNIn allows us to take an holistic view of a drug and it's interactions at a
+    systems level. The DReNIn dataset includes data integrated from multiple sources and is presented as a Resource
+    Description Framework (<a href="http://www.w3.org/RDF/">RDF</a>) dataset. The dataset is stored in a <a
+            href="https://virtuoso.openlinksw.com/">Virtuoso</a> triple store which can queried using <a
+            href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL</a>. DReNIn is made up of more than 8 million triples.
+</p>
+<p>DReNIn makes use of the <a href="DReNIn_Ont.jsp">DReNIn Ontology</a>, which enables a simplified view of a
+    complicated landscape. Focussing on single protein targets from <i>Homo sapiens</i>, DReNIn allows for drug
+    repositioning opportunities to be identified for both rare and common diseases. Unlike other pharmacological
+    datasets, DReNIn includes drug side-effects, drug indications and clinical trials data; allowing inferred drug
+    repositioning opportunities to be further investigated for validity.</p>
+<p>Taking <i>in silico</i> approaches to analysing <i>in vivo</i> and <i>in vitro</i> systems obviously limits accuracy;
+    overly simplified settings innately struggle to reflect real-life problems<b><sup>3,4</sup></b>. We hope that by
+    providing a simplified view of a drugs surroundings, DReNIn can help to reduce the enormous search space that is
+    apparent within the field of drug repositioning.</p>
+<hr>
+<ol>
+    <font size="-1">
+        <li>J. Li, S. Zheng, B. Chen, A. J. Butte, S. J. Swamidass, and Z. Lu, "<a
+                href="http://bib.oxfordjournals.org/content/early/2015/03/31/bib.bbv020.full.pdf+html">A survey of
+            current trends in computational drug repositioning</a>", Briefings in Bioinformatics, vol. 17, pp. 2-12,
+            Jan. 2016
+        </li>
+        <li>T. T. Ashburn and K. B. Thor, "<a href="http://www.nature.com/nrd/journal/v3/n8/full/nrd1468.html">Drug
+            repositioning: identifying and developing new uses for existing drugs</a>", Nature reviews. Drug discovery,
+            vol. 3, pp. 673-83, Aug. 2004.
+        </li>
+        <li>J. Mullen, S.J. Cockell, H. Tipney, P.M. Woollard and A. Wipat, "<a href="https://peerj.com/articles/1558/">Mining
+            integrated semantic networks for drug repositioning opportunities</a>", PeerJ 4:e1558 Jan. 2016
+        </li>
+        <li>J. Mullen, S.J. Cockell, P.M. Woollard and A. Wipat, "<a
+                href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155811">An Integrated Data
+            Driven Approach to Drug Repositioning Using Gene-Disease Associations</a>", PLoS ONE 11(5): e0155811. 2016
+        </li>
+    </font>
+</ol>
+<hr>
+{% endblock %}
